@@ -1,0 +1,117 @@
+/* Css file for login form */
+@font-face {
+  font-family: opensansbold;
+  src: url(../fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: opensansextrabold;
+  src: url(../fonts/OpenSans-ExtraBold.ttf);
+}
+@font-face {
+  font-family: opensanslight;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: opensansregular;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: opensanssemibold;
+  src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image:url('../resources/images/backlogin.jpg') ;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+
+.loginFormContainer{
+  text-align: center;
+  background: linear-gradient(to top,rgba(255,255,255,0.5),rgba(255,255,255,0.9));
+  margin: auto;
+  margin-top: 10vh;
+  padding-top: 4vh;
+  padding-bottom: 6vh;
+  padding-right: 4vw;
+  padding-left: 4vw;
+  width: 330px;
+  border: 10px solid rgba(100, 0, 250, 0.2);
+  border-radius: 15px;
+}
+
+.loginFormContainer form{
+  margin-top: 40px;
+}
+
+a{
+  font-family: opensansregular;
+  font-size: 13px;
+  color:rgb(52, 44, 97);
+  text-decoration: none;
+
+}
+
+.loginFormContainer form input[type=text], .loginFormContainer form input[type=password]{
+  width: 95%;
+  margin: 5px;
+  display: block;
+  padding: 0 10px;
+  height: 40px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+  -webkit-transition: border-bottom 0.5s;
+  transition: border-bottom 0.5s;
+  font-size: 14px;
+}
+
+.loginFormContainer form input[type=submit]{
+  margin: 1%;
+  margin-top: 25px;
+  width: 98%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: #8075B6;
+  transition: background .3s;
+  font-family: opensansregular;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.loginFormContainer input:not([type="submit"]):focus{
+  border-bottom: 1px solid black;
+}
+
+.loginFormContainer input[type=submit]:hover{
+  cursor: pointer;
+  background: #8785B6;
+}
+
+
+/* Screen sizes less than 600px */
+@media only screen and (max-width: 600px) {
+
+
+  .loginFormContainer{
+    margin-top: 10vh;
+    width: 250px;
+  }
+
+  .loginFormContainer form input[type=text], .loginFormContainer form input[type=password]{
+    width: 220px;
+  }
+
+  .loginFormContainer form input[type=submit]{
+    width: 235px;
+  }
+}

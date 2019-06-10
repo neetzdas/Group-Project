@@ -1,0 +1,1399 @@
+/* Fonts */
+@font-face {
+  font-family: opensansbold;
+  src: url(../fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: opensansextrabold;
+  src: url(../fonts/OpenSans-ExtraBold.ttf);
+}
+@font-face {
+  font-family: opensanslight;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: opensansregular;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: opensanssemibold;
+  src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Catamaran');
+@import url('https://fonts.googleapis.com/css?family=Francois+One');
+@import url('https://fonts.googleapis.com/css?family=Cinzel:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+@import url('https://fonts.googleapis.com/css?family=Bitter|ZCOOL+XiaoWei'); */
+
+p{font-family: opensansregular;}
+h1{font-family: opensansbold;}
+h2{font-family: opensansbold}
+h3{font-family: opensansbold}
+h4{font-family: opensansbold}
+h5{font-family: opensansbold}
+a{color: white; text-decoration: none;font-family: opensanssemibold;}
+
+
+/* CSS Start */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow-x: hidden;
+  font-family: opensansregular;
+}
+
+
+/*------------------------------------LOADING ANIMATION------------------------------------------------------------*/
+
+
+/********************************************************************************************************************/
+
+.load {
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		background: white;
+		position: fixed;
+		top:0px;
+		left: 0px;
+}
+
+.loader {
+		position: fixed;
+		top: 40%;
+		left: 47%;
+		display: inline-block;
+		background: white;
+	}
+
+
+.loader .bar{
+		float: left;
+		background: green;
+		height: 25px;
+		width: 5px;
+		margin: 2px;
+		animation-name: loadinganimation;
+		animation-duration: .72s;
+		animation-iteration-count: infinite;
+		border-radius: 5px;
+
+	}
+
+	@keyframes loadinganimation {
+		0%,20%,80%,100% { transform: scale(1);}
+		50% {transform: scaleY(1.8);}
+	}
+
+	.firstBar{}
+	.secondBar{animation-delay: 0.08s;}
+	.thirdBar{animation-delay: 0.16s;}
+	.fourthBar{animation-delay: 0.32s;}
+	.fifthBar{animation-delay: 0.40s;}
+	.sixthBar{animation-delay: 0.48s;}
+	.seventhBar{animation-delay: 0.56s;}
+	.eighthBar{animation-delay: 0.64s;}
+
+@media screen and (max-width: 500px){
+	.loader {
+		left:40%;
+	}
+}
+
+
+
+main{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 97vh;
+}
+
+
+nav{
+  width: 16%;
+  background: #fff;
+  color: #000;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
+}
+
+nav ul{
+  list-style: none;
+  margin-top: 3px;
+  font-size: calc(0.9vw + 7px);
+}
+
+
+nav ul li{
+  background: #fff;
+  transition: background .2s, padding-left .3s;
+  border-bottom: 1px solid #1DC5A3;
+}
+
+nav ul li div{
+  padding: 15px;
+}
+
+nav ul li div img{
+  transform: translateY(3px);
+  width: 20px;
+  filter:brightness(0) grayscale(200%);
+}
+
+nav ul li:nth-child(odd){
+  background: #fff;
+}
+
+nav ul li:hover{
+  background: #a6eaa5;
+}
+
+.navText{
+  transition: .3s;
+}
+
+nav .selected{
+  background: #a6eaa5;
+
+}
+nav .dashboard{
+  background: rgba(100, 220, 100, 0.6);
+}
+
+
+nav ul li:hover .navText{
+  margin-left: 10px;
+}
+
+
+
+
+nav ul li a{
+  color: rgb(85, 84, 84);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+section{
+  border-bottom: 1px solid lightgray;
+  width: 86%;
+}
+
+.logosection{
+  width: 100%;
+  margin:20px 45px;
+}
+.logosection img {
+  width: 60%;
+}
+header{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  background: #717ede;
+}
+
+#headerLeft{
+  padding: 1%;
+  width: 31.3%;
+  background: #717ede;
+  color: black;
+  text-align: center;
+}
+#headerLeft h4{
+  font-size: 14px;
+}
+
+
+
+#headerMiddle{
+  padding: 1%;
+  width: 31.3%;
+  background: #717ede;
+  color: black;
+  text-align: right;
+}
+#headerMiddle h3{
+  font-size: 14px;
+  color:#fff;
+}
+
+header input[type=text]{
+  margin-top: -3px;
+  width: calc(40% + 50px);
+  max-width: 200px;
+  height: 30px;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+header input[type=submit]{
+  margin-top: -3px;
+  width: 40px;
+  height: 34px;
+  display: inline-block;
+}
+
+
+#headerRight{
+  width: 31.4%;
+  background: #717ede;
+  color: black;
+  text-align: center;
+  user-select: none;
+}
+
+.downArrow {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transition: transform .2s;
+  transform: rotate(45deg) translateY(-3px);
+  -webkit-transform: rotate(45deg) translateY(-3px);
+}
+
+.rightArrow{
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+
+/* Header Dropdown */
+
+#dropdown{
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 15px;
+  margin-top: -4px;
+  padding-bottom: 4px;
+  transition: background .1s;
+}
+#dropdown h5{
+ font-size: 14px;
+ color:#fff;
+}
+
+#dropdown:hover{
+  cursor: pointer;
+  background: #fff;
+}
+
+#dropdown:hover h5{
+  color:#000;
+}
+#dropdown:hover .downArrow{
+ border-color: #000;
+}
+
+
+#headerRight img{
+  width: 30px;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  margin-right: 5px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 14px;
+  margin-left: -10px;
+  background-color: #f1f1f1;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color .1s, color .1s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #3498DB; color: white; opacity: 0.6;}
+
+.show {display:block;}
+
+
+.contentArea{
+  background: rgb(235, 235, 235);
+  padding: 15px;
+  min-height: 88.5vh;
+}
+
+
+footer{
+  text-align: center;
+  height: 25px;
+  padding-top:5px;
+  background: #92ffdc;
+  color: #000;
+  width: 100%;
+  font-family: opensansregular;
+  font-size: 12px;
+}
+
+
+
+
+
+
+
+
+/* Admin Dashboard Template */
+
+
+.boxesContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.boxesContainer .content, .adminManageTable .content, .userForm .content{
+  margin: 10px;
+  font-family: opensansregular;
+  color: black;
+  /* display: flex; */
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  line-height: 14px;
+  /* height: 80px;; */
+}
+
+.subContentList{
+  background: white;
+  padding: 15px;
+  height: 25px;
+  border-bottom: 1px solid lightgray;
+  font-family: opensansregular;
+  font-size: 14px;
+}
+
+.userNotesBox .content{
+display: flex;
+align-items: center;
+width: 100%;
+justify-content: center;
+}
+
+#customScroll::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 15px;
+	background-color: #F5E5E5;
+}
+
+#customScroll::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: #FEF5E5;
+}
+
+#customScroll::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(10,10,50,.5);
+	background-color: #999;
+}
+
+#customScroll::-webkit-scrollbar-thumb:hover
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(10,10,50,.7);
+	background-color: #777;
+}
+
+.subContentList:hover{
+  background: #E1EAEB;
+}
+
+.adminDashboardBox{
+  width: 24%;
+  height: 130px;
+  background: red;
+  margin: 7px;
+  opacity: 0.6;
+  border-radius: 5px;
+  padding: 0px;
+  padding-bottom: 35px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family:opensansregular;
+  text-align: center;
+  transition: opacity .1s;
+  user-select: none;
+}
+
+.adminDashboardBox:hover{
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.adminDashboardBox a{
+  padding: 5%;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  color:#000;
+}
+
+.adminDashboardBox img{
+  width: 50px;
+  display: block;
+  margin: auto;
+  margin-bottom: 13px;
+  margin-top: 10px;
+  filter:brightness(0);
+}
+
+
+.adbstudents{
+  background: #fff;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
+}
+
+.adbmoduleleaders{
+  background:#fff;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
+}
+
+.adbcourses{
+  background: #fff;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
+}
+
+.adbmodules{
+  background: #fff;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
+}
+
+
+
+
+/* Large content box */
+.contentBoxLarge{
+  width: 50%;
+  /* min-height: 435px; */
+  background: white;
+  text-align: center;
+  margin: 7px;
+  border-radius: 5px;
+  color: white;
+  user-select: none;
+}
+
+.contentBoxLarge .title{
+  background: #7fb5a2;
+  width: 100%;
+  padding-top: 10px;
+  height: 40px;
+  font-family: opensansregular;
+  font-weight: bolder;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+
+
+
+/* Manage Administrators */
+
+.adminManageTable, .userForm{
+  width: calc(100% - 20px);
+  background: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: calc(1% + 5px);
+}
+
+.tableTitle, .formTitle{
+  margin-left: -10px;
+  margin-top: -10px;
+  background: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: calc(100% + 20px);
+  margin-bottom: 10px;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.formEditPassword{
+  background: #fff;
+}
+
+.tableHeading, .formHeading{
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 18px;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
+  color:#000;
+  text-transform: uppercase;
+}
+
+.adminManageTable table{
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 1.5%;
+
+
+}
+
+.adminManageTable td, th {
+  border: 1px solid white;
+  padding: 10px;
+  font-family: opensansbold;
+  word-break: break-all;
+}
+
+.adminManageTable td {
+font-family: opensansregular;
+font-size: 14px;
+}
+.adminManageTable td a{
+font-family: opensansregular;
+font-size: 14px;
+}
+
+
+
+.adminManageTable tr{
+  transition: background-color 0.1s;
+}
+
+.adminManageTable tr:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.adminManageTable th {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+  border:1px solid #000;
+  border-left: 0;
+  border-right: 0;
+  text-align: left;
+
+}
+
+.tableIcon{
+  width: 20px;
+}
+
+.tableIcon:hover{
+  transform: scale(1.1);
+}
+
+.adminManageTable a{
+  color: blue;
+}
+
+
+/* Manage Area Boxes */
+
+.boxesContainerManage{
+  width: calc(100% + 0px);
+  padding-bottom: 5px;
+}
+
+.contentBoxLargeManage{
+  width: 50%;
+  min-height: 150px;
+}
+
+
+.addNewBox, .deleteBox{
+  background: #fff;
+  opacity: 0.8;
+  text-align: center;
+  color: #000;
+  font-family: opensansregular;
+  font-weight: bolder;
+  font-size: 19px;
+  border-radius: 5px;
+  transition: opacity 0.3s;
+}
+.addNewBox{
+  width: calc(20% - 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  padding: 10px;
+  margin: auto;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.userNotesBox{
+  width: 80%;
+  padding-bottom: 10px;
+}
+
+/*  Table border  */
+.tableborder {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tableborder tr{
+    border-left: 0;
+    border-right: 0;
+}
+.tableborder tr th{
+    width: 30%;
+    background: #efefef;
+    border-left: 1px solid #c4c2c2;
+}
+.tableborder tr td{
+   padding-left: 20px;
+   border-bottom: 1px solid #c4c2c2;
+   border-right: 1px solid #c4c2c2;
+   width:70%;
+   word-break:break-all;
+}
+.tableborder tr td img{
+ width: 20px;
+ filter:brightness(0);
+}
+.tableborder tr:last-of-type td{
+   padding-left: 20px;
+}
+.tableborder tr:first-of-type td{
+  border-top: 1px solid #c4c2c2;
+}
+.tableborder tr:first-of-type th{
+  border-top: 1px solid #c4c2c2;
+}
+.tableborder tr:last-of-type th{
+  border-bottom: 1px solid #c4c2c2;
+
+}
+.addNewBox a{
+color:#000;
+}
+.addNewBox img{
+filter: brightness(0);
+margin-bottom: 10px;
+opacity: 0.8;
+}
+.contentBoxLargeEdit{
+  width: 100%;
+}
+
+.deleteBox{
+  width: 25%;
+  background: rgb(250, 80, 80);
+  max-height: 250px;
+}
+
+.addNewBox:hover, .deleteBox:hover{
+  opacity: 1.0;
+}
+
+.deleteBoxTextHolder{
+  width: 100%;
+  height: 86%;
+  padding-top: 8%;
+}
+
+.deleteBox img{
+  transition: transform 0.3s;
+  width: 30px;
+}
+
+.deleteBox:hover img{
+  transform: scale(1.1);
+}
+
+/* Add Form */
+
+.userForm{
+  margin-top: 5px;
+}
+
+.userForm label{
+  width: 95%;
+  margin: 5px;
+  margin-bottom: 10px;
+  display: block;
+  font-family: opensansregular;
+  font-size: 14px;
+  color: rgb(50, 50, 50);
+}
+
+.userForm input:not([type="submit"]), .userForm select, .userForm textarea{
+  width: 95%;
+  margin: 5px;
+  display: block;
+  height: 30px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+  -webkit-transition: border-bottom 0.5s;
+  transition: border-bottom 0.5s;
+  font-family: opensansregular;
+  font-size: 14px;
+}
+
+.userForm input:not([type="submit"]):focus, .userForm select:focus, .userForm textarea:focus{
+  border-bottom: 1px solid black;
+}
+
+.userForm select{
+  width: 96%;
+}
+
+.userForm textarea{
+  max-width: 95.5%;
+  min-width: 95.5%;
+  max-height: 200px;
+}
+
+
+.userForm input[type=submit]{
+  margin: 1%;
+  margin-top: 25px;
+  width: 98%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: #8075B6;
+  transition: background .3s;
+  font-family: opensansregular;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.userForm input[type=submit]:hover{
+  cursor: pointer;
+  background: #8785B6;
+}
+
+
+.formHolder{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.resourceHolder{
+  display: flex;
+  border-bottom: 1px solid #1DC5A3;
+  padding: 20px 0;
+}
+
+
+.resourceHolder:last-of-type{
+  border-bottom: 0;
+}
+
+.formColumn1{
+  width: 49%;
+  padding: 5px;
+}
+
+
+.formColumn1 p{
+font-size: 15px;
+margin-bottom: 15px;
+line-height:30px;
+}
+
+
+.formColumnSeparator{
+  width: 1px;
+  background: lightgray;
+}
+
+.formColumn2{
+  width: 49%;
+  padding: 5px;
+}
+
+
+
+/* Course Model box */
+.courseModuleBox{
+  margin: 3px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-family: opensansregular;
+  text-align: center;
+  transition: opacity .1s;
+  user-select: none;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.courseModuleBox .fa{
+  margin-right: 10px;
+}
+
+.courseModuleBox:hover{
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.courseModuleBox img{
+  width: 70px;
+  display: block;
+  margin: auto;
+  margin-bottom: 13px;
+  margin-top: 50px;
+}
+
+
+.letterbox{
+  width: 91%;
+  padding: 2%;
+  margin: auto;
+  border: 1px dashed gray;
+  min-height: 350px;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.content button{
+  padding: 10px;
+  margin-top: 20px;
+  width: 95%;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.1s;
+}
+
+.content b{
+  font-size: 15px;
+margin-bottom: 15px;
+line-height:30px;
+width: 150px;
+display: inline-block;
+font-family: opensanssemibold;
+}
+.content button:hover{
+  opacity: 0.8;
+}
+
+
+.userForm fieldset{
+  padding: 20px 5px 20px 5px; border: 1px dashed darkgray; width: calc(100% - 20px);
+}
+
+.subContentList b{
+  width: 100%;
+}
+.termBox{
+  /* width: 41%;
+  height: 200px;
+  margin-left: 3%; */
+}
+
+.resourceBox{
+  text-align: center;
+  width: 18%;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: calc(0.5rem + 5px);
+  font-weight: bold;
+  font-family: opensansregular;
+  padding-bottom: 15px;
+  opacity: 0.55;
+  transition: opacity 0.15s;
+  color: white;
+}
+
+.resourceBox img{
+  width: 25px;
+  margin-bottom: -7px;
+}
+
+.resourceBox:hover{
+  opacity: 0.7;
+}
+
+
+
+.downloadImage{
+  opacity: 0.8;
+  border-radius: 10px;
+  transition: opacity 0.15s;
+  width: auto;
+}
+
+.downloadImage:hover{
+  opacity: 0.98;
+}
+
+
+/* Code taken from https://www.w3schools.com/howto/howto_css_breadcrumbs.asp */
+
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #fff;
+  margin: 15px;
+  border-radius: 5px;
+  margin-left: 0px;
+  margin-top: 0px;
+  width: calc(100% - 32px);
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 13px;
+}
+
+ul.breadcrumb li img{
+   width: 20px;
+   margin-bottom: -4px;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "\203A";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+
+
+
+/* Code taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: white;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  opacity: 0.6;
+  border-radius: 5px;
+  transition: 0.1s ease-out;
+  background: darkslategray;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  opacity: 0.8;
+  border-radius: 0px;
+  border-top-left-radius: : 5px;
+  border-top-right-radius: : 5px;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapsedcontent {
+  padding: 0 18px;
+  max-height: 0;
+  margin-bottom: 5px;
+  overflow: hidden;
+  background-color: white;
+  transition: max-height 0.1s ease-out;
+}
+
+
+/* Attendance bar for viewing student attendances */
+.attendanceBar{
+  width: 95%;
+  background-color: #ddd;
+  opacity: 0.6;
+  transition: opacity 0.1s;
+}
+
+.attendanceBar:hover{
+  opacity: 0.8;
+}
+
+.percentage{
+  text-align: right;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  color: white;
+
+}
+
+.userNotesBox{
+  margin: auto;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.userNotesBox .content{
+  height: 100px;
+  line-height: 1.2;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.singlerow{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: column;
+}
+.singlerow input[type="submit"]{
+ width: 100px;
+ font-size: 13px;
+}
+
+.singlerow input[type="file"]{
+  display: none;
+  margin: 0;
+  width: 0;
+}
+
+.singlerow label{
+  width:1000px;
+  border:1px solid #3498DB;
+  display: flex;
+  padding: 40px 30px;
+  text-align: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-flow: column;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.singlerow label .fa{
+  margin-top: 20px;
+}
+
+.singlerow label:hover{
+ cursor: pointer;
+}
+
+.formColumn1 b{
+  font-family: opensanssemibold;
+  width: 150px;
+  display: inline-block;
+}
+
+.formCol{
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+
+.widthform{
+  width: 100%;
+}
+
+.btn{
+  border:#8075B6;
+  padding: 15px 25px;
+  background: #4CAF50;
+  color:#fff;
+  font-size: 14px;
+  border-radius: 3px;
+  opacity: 0.8;
+  transition: opacity 0.1s;
+  margin-bottom: 5px;
+}
+.btn:hover{
+  cursor: pointer;
+  opacity: 1.0;
+}
+.btn-hide{
+  background: #FF6347;
+}
+.btn-publish{
+  background: #CD853F;
+}
+.btn-submit{
+  background: rgb(124, 101, 101);
+}
+.btn-delete{
+  background: red;
+}
+.flex-top{
+  align-items: flex-start;
+}
+
+#searchBar {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-image: url('/GroupProject/public/resources/images/search.png');
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#searchBar:focus {
+  width: 300px;
+}
+
+/* Student Forum */
+
+.forumDiv{
+  padding: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.forumDiv:nth-child(odd){
+  background: #e8effc;
+}
+.forumDiv:nth-child(even){
+  background: white;
+}
+
+.forumDiv span{
+  float: right;
+}
+
+
+
+
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+
+
+/* Media Queries */
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: lightblue;
+    overflow-x: hidden;
+  }
+
+  .logosection img {
+    opacity: 0;
+  }
+
+  #headerLeft{
+    display: none;
+  }
+
+  #headerMiddle{
+    display: none;
+  }
+
+  #headerRight{
+    width: 100%;
+    height: 50px;
+  }
+
+  #dropdown{
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  .dropdown-content {
+    margin-top: 17px;
+  }
+
+
+  nav{
+    text-align: center;
+  }
+
+  nav ul li div{
+    padding: 15px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  nav ul li div img{
+    transform: translateY(3px);
+    width: 30px;
+  }
+
+
+  .navText{
+    display: none;
+  }
+
+  .boxesContainer{
+    flex-direction: column;
+  }
+
+  .adminDashboardBox, .contentBoxLarge{
+    width: 98%;
+  }
+
+  .adminManageTable{
+    overflow-x: scroll;
+  }
+
+  .adminManageTable td, th {
+    word-break: normal;
+  }
+
+  .addNewBox{
+    width: calc(100% - 25px);
+    margin: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .formHolder{
+    flex-direction: column;
+  }
+
+  .formColumnSeparator{
+    opacity: 0;
+    width: 100%;
+    height: 30px;
+  }
+
+  .offerHolder .content{
+    margin-left: -5px;
+  }
+
+
+  .formColumn1, .formColumn2{
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+
+  .deleteBox{
+    padding-bottom: 13%;
+  }
+
+
+  .termBox{
+    width: 50%;
+    margin-left: -5%;
+    margin-top: 5px;
+  }
+
+  .resourceBox{
+    width: 92%;
+    margin-left: 0%;
+    margin-bottom: 5px;
+  }
+
+  .announcementDate{
+    display: none;
+  }
+
+  .searchStudent{
+    display: none;
+  }
+}
+
+
+
+/* Modal CSS  -- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0px;
+  border: 1px solid #888;
+  width: 80%;
+  min-height: 30vh;
+  padding-bottom: 30px;
+}
+
+.modal-content p{
+  line-height: 35px;
+}
+
+.modal-header {
+  padding: 15px 16px;
+  background-color: #A0522D;
+  color: white;
+}
+
+.modal-body {padding: 30px 16px;}
+
+/* The Close Button */
+.close {
+  color: #fff;
+  float: right;
+  margin-top: -10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #444;
+  text-decoration: none;
+  cursor: pointer;
+}
